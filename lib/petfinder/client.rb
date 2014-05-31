@@ -70,7 +70,7 @@ module Petfinder
     end
 
     def perform_get(uri, options = {})
-      connection = Excon.new("http://api.petfinder.com", omit_default_port: true)
+      connection = Faraday.new("http://api.petfinder.com", omit_default_port: true)
       response = connection.get(path: uri, query: options.merge(key: @api_key))
 
       raise "Bad http status response from server: #{response.status}" if response.status != 200

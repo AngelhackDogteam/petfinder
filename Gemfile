@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-
+gem 'faraday'
 group :development do
   gem 'pry'
 end
